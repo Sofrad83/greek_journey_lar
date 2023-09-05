@@ -39,7 +39,7 @@
         left: 0;
         top: 0;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         opacity: 0.3;
         background-image: url('@yield('background-img')');
         background-repeat: no-repeat;
@@ -149,7 +149,7 @@
             </div>
         </div>
         <br>
-        <div class="row">
+        <div class="row" id="content-row">
             <div class="col">
                 @yield('content')
             </div>

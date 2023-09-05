@@ -3,6 +3,10 @@ $(document).ready(function(){
         let href = $(this).data('href')
         window.open(href, "_self")
     })
+
+    $('.content:before').css({
+        "height" : $('#content-row').height()
+    })
 })
 
 // Utilisation de JavaScript pour empêcher le téléphone de se verrouiller

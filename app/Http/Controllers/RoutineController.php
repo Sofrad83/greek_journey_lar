@@ -23,7 +23,7 @@ class RoutineController extends Controller
         $user = Auth::user();
         $mes_routines = Routine::where('user_id', $user->id)->get();
 
-        $routines_amis = Routine::with('user')->where('user_id', '!=', $user->id)->get();
+        $routines_amis = Routine::with('user')->where('user_id', '!=', $user->id)->where('private', 0)->get();
         $routine_saved = RoutineSaved::where('user_id', $user->id)->get()->pluck('routine_id')->toArray();
 
         return view('routine.index', [

@@ -38,12 +38,14 @@ class RoutineController extends Controller
     {
         $nom = $request->get('nom');
         $description = $request->get('description');
+        $private = $request->get('private');
         $user = Auth::user();
 
         $routine = Routine::updateOrCreate(['id' => $request->get('id')], [
             'nom' => $nom,
             'description' => $description,
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'private' => $private
         ]);
 
         $exos = $request->get('exos');

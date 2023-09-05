@@ -21,7 +21,7 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <select class="form form-control form-custom" name="groupe_musculaire_id">
+                                <select class="form form-control form-custom" name="groupe_musculaire_id" id="selectGM">
                                     @foreach ($muscles as $m)
                                         <option value="{{$m->id}}">{{$m->nom}}</option>
                                     @endforeach

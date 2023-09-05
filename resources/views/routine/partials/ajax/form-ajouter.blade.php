@@ -48,6 +48,25 @@
                 </table>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <div class="col text-center">
+                <div class="form-check border border-warning rounded p-3">
+                    <input class="form-check-input" type="radio" name="private" id="radioPublique" value="0">
+                    <label class="form-check-label" for="radioPublique">
+                      Publique
+                    </label>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="form-check border border-warning rounded p-3">
+                    <input class="form-check-input" type="radio" name="private" id="radioPrivate" value="1" checked>
+                    <label class="form-check-label" for="radioPrivate">
+                      Privé
+                    </label>
+                </div>
+            </div>
+        </div>
         <hr>
         <div class="row">
             <div class="col">
@@ -116,7 +135,7 @@
         <div class="row">
             <div class="col text-center">
                 <div class="form-check border border-warning rounded p-3">
-                    <input class="form-check-input" type="radio" name="private" id="radioPublique" value="0" {{$routine->private ? "" : "checked"}}>
+                    <input class="form-check-input" type="radio" name="private" id="radioPublique" value="0" {{$routine->private ? "" : "checked='true'"}}>
                     <label class="form-check-label" for="radioPublique">
                       Publique
                     </label>
@@ -124,7 +143,7 @@
             </div>
             <div class="col text-center">
                 <div class="form-check border border-warning rounded p-3">
-                    <input class="form-check-input" type="radio" name="private" id="radioPrivate" value="1" {{$routine->private ? "checked" : ""}}>
+                    <input class="form-check-input" type="radio" name="private" id="radioPrivate" value="1" {{$routine->private ? "checked='true'" : ""}}>
                     <label class="form-check-label" for="radioPrivate">
                       Privé
                     </label>

@@ -28,6 +28,8 @@ $(document).ready(function() {
                 $('#inputNomExercice').val(data.nom)
                 $('#inputDescriptionExercice').val(data.description)
                 $('#inputHiddenIdExercice').val(data.id)
+                $('#selectGM').val(data.groupe_musculaire_id)
+                $('#selectGM').trigger('click')
                 if(data.private){
                     $('#radioPrivate').trigger('click')
                 }else{

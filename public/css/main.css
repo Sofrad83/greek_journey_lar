@@ -1,0 +1,300 @@
+body {
+    background-color: #0f0f0b;
+    color: goldenrod;
+}
+
+hr {
+    background: goldenrod;
+}
+
+.bg-img {
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3.big, h4, h5.big, h6 {
+    font-family: "AUGUSTUS";
+    color: goldenrod;
+}
+
+.hide-custom{
+    display: none;
+}
+
+.card{
+    background: #0f0f0b !important;
+}
+
+.modal-content{
+    background: #0f0f0b !important;
+}
+
+.modal-header{
+    border-bottom: 1px solid goldenrod !important;
+}
+
+.modal-footer{
+    border-top: 1px solid goldenrod;
+}
+
+.text-gold{
+    color: goldenrod;
+}
+
+.btn-gold{
+    background: goldenrod !important;
+}
+
+.dot{
+    background-color: goldenrod !important;
+}
+
+.flickity-viewport{
+    height: 500px !important;
+}
+
+.fab-add {
+    background: blue;
+}
+
+.fab-container-disabled {
+    cursor: default !important;
+}
+
+.fab-icon-holder-gradient {
+    background-image: linear-gradient(to left top, rgba(40, 167, 69, 1) 0%, rgba(40, 167, 69, 1) 50%, gray 50%, gray 100%) !important;
+    background-size: 200% 200% !important;
+    background-position: 100% 100% !important;
+    transition: background-position 0.5s !important;
+}
+
+.fab-container-disabled > .fab-icon-holder {
+    background-position: 0 0 !important;
+}
+
+.fab-haut {
+    bottom: 85%;
+}
+
+.fab-bas {
+    bottom: 50px;
+}
+
+.fab-container {
+    position:fixed;
+    right: 50px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.fab-icon-holder {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #016fb9;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.fab-container:not(.fab-container-disabled) > .fab-icon-holder:hover {
+    opacity:0.8;
+}
+
+.fab-icon-holder i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    font-style: 25px;
+    color: #ffffff;
+}
+
+.fab:not(i) {
+    width: 60px;
+    height: 60px;
+}
+.fab-haut .fab-options {
+    list-style-type: none;
+    margin-right: -10px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: 85% bottom;
+}
+
+.fab-bas .fab-options {
+    list-style-type: none;
+    margin: 0;
+
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+
+    opacity: 0;
+
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: 85% bottom;
+}
+
+.fab-container:not(.fab-container-disabled) > .fab:hover + .fab-options, .fab-options:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fab-options li {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.fab-label {
+    padding: 2px 5px;
+    align-self: center;
+    user-select: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-size: 16px;
+    background: #666666;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    margin-right: 10px;
+}
+
+.fab-icon-holder i {
+    /*font-size: 20px;*/
+}
+
+.fab-icon-holder a {
+    text-decoration: none;
+}
+
+.fa-beat {
+  animation:fa-beat 2s ease infinite;
+}
+
+.text-chrono{
+    font-size: 3rem;
+}
+
+.card-chrono{
+    position: fixed;
+    bottom: 10px;
+    left: 2.5%;
+    right: 2.5%;
+    width: 95%;
+    height: 80px;
+    background-color: #414141 !important;
+    /* width: 250px;
+    height: 100%; */
+    /* transition: .3s; */
+    z-index: 999;
+}
+
+.bg-custom{
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-white{
+    background-color: white;
+}
+
+th, td{
+    border: 1px solid goldenrod !important;
+    border-radius: 10px !important;
+}
+
+.last-row-seance{
+    margin-bottom: 100px;
+}
+
+input[type="text"]
+{
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+input.form-custom {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid black;
+    accent-color: goldenrod;
+}
+input.form-custom::placeholder {
+    color: goldenrod;
+}
+input.form-custom:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    accent-color: goldenrod;
+}
+input.form-custom:read-only,
+input.form-custom[readonly] {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
+input.form-custom:read-only::placeholder,
+input.form-custom[readonly]::placeholder {
+    color: goldenrod;
+}
+
+textarea.form-custom {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid black;
+    accent-color: goldenrod;
+}
+textarea.form-custom::placeholder {
+    color: goldenrod;
+}
+textarea.form-custom:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    accent-color: goldenrod;
+}
+
+select.form-custom {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid black;
+    accent-color: goldenrod;
+}
+select.form-custom::placeholder {
+    color: goldenrod;
+}
+select.form-custom:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    accent-color: goldenrod;
+}
+
+.pdp-mon-compte{
+    font-size: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.pdp-default{
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+
+.card-recap{
+    background: #2c2c2c !important;
+    border-radius: 10%;
+}

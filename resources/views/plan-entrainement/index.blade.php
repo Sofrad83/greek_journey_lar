@@ -18,6 +18,9 @@ PLAN D'ENTRAINEMENT
                 @foreach ($mes_routines as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 1)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
+                @foreach ($routines_saved as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 1)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -30,6 +33,9 @@ PLAN D'ENTRAINEMENT
             <select class="form form-control form-custom assign-routine" data-jour_id="2">
                 <option value="">Repos</option>
                 @foreach ($mes_routines as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 2)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
+                @foreach ($routines_saved as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 2)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
             </select>
@@ -46,6 +52,9 @@ PLAN D'ENTRAINEMENT
                 @foreach ($mes_routines as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 3)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
+                @foreach ($routines_saved as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 3)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -58,6 +67,9 @@ PLAN D'ENTRAINEMENT
             <select class="form form-control form-custom assign-routine" data-jour_id="4">
                 <option value="">Repos</option>
                 @foreach ($mes_routines as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 4)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
+                @foreach ($routines_saved as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 4)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
             </select>
@@ -74,6 +86,9 @@ PLAN D'ENTRAINEMENT
                 @foreach ($mes_routines as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 5)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
+                @foreach ($routines_saved as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 5)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -88,6 +103,9 @@ PLAN D'ENTRAINEMENT
                 @foreach ($mes_routines as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 6)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
+                @foreach ($routines_saved as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 6)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -100,6 +118,9 @@ PLAN D'ENTRAINEMENT
             <select class="form form-control form-custom assign-routine" data-jour_id="7">
                 <option value="">Repos</option>
                 @foreach ($mes_routines as $r)
+                    <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 7)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
+                @endforeach
+                @foreach ($routines_saved as $r)
                     <option value="{{$r->id}}" {{($plan_entrainement->where('jour_id', 7)->first()->routine_id ?? 0) == $r->id ? "selected" : ""}}>{{$r->nom}}</option>
                 @endforeach
             </select>

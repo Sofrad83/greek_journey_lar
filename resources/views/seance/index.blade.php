@@ -16,8 +16,12 @@ S'EXERCER
     <hr>
     <div class="row">
         <div class="col">
-            @if ($mes_routines->where('id', $routine_du_jour)->count())
+            @if ($mes_routines->where('id', $routine_du_jour)->count() || $routines_saved->where('id', $routine_du_jour)->count())
                 @foreach ($mes_routines->where('id', $routine_du_jour) as $routine)
+                    @include('seance.partials.routine-card', ['routine' => $routine])
+                    <br>
+                @endforeach
+                @foreach ($routines_saved->where('id', $routine_du_jour) as $routine)
                     @include('seance.partials.routine-card', ['routine' => $routine])
                     <br>
                 @endforeach
@@ -35,13 +39,17 @@ S'EXERCER
     <hr>
     <div class="row">
         <div class="col">
-            @if ($mes_routines->count())
+            @if ($mes_routines->count() || $routines_saved->count())
                 @foreach ($mes_routines->where('id', '!=', $routine_du_jour) as $routine)
                     @include('seance.partials.routine-card', ['routine' => $routine])
                     <br>
                 @endforeach
+                @foreach ($routines_saved->where('id', '!=', $routine_du_jour) as $routine)
+                    @include('seance.partials.routine-card', ['routine' => $routine])
+                    <br>
+                @endforeach
             @else
-                Il n'y a aucune routine enregistré. Créez-en pour commencer une séance
+                Aucune routines trouvées.
             @endif
         </div>
     </div>

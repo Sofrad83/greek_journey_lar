@@ -33,6 +33,7 @@ Route::group(['prefix' => 'routine'], function(){
     Route::post('/delete', 'App\Http\Controllers\RoutineController@deleteRoutine')->name('routine.delete');
     Route::post('/get', 'App\Http\Controllers\RoutineController@getRoutine')->name('routine.get');
     Route::post('/get-form', 'App\Http\Controllers\RoutineController@getFormRoutine')->name('routine.get-form');
+    Route::post('/save-routine', 'App\Http\Controllers\RoutineController@saveRoutine')->name('routine.save-routine');
 });
 
 //Seance

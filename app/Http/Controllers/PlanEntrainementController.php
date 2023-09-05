@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Exercice;
 use App\Models\PlanEntrainement;
+use App\Models\RoutineSaved;
 
 
 class PlanEntrainementController extends Controller
@@ -22,11 +23,13 @@ class PlanEntrainementController extends Controller
     {
         $user = Auth::user();
         $mes_routines = Routine::where('user_id', $user->id)->get();
+        $routines_saved = Routine::whereIn('id', RoutineSaved::where('user_id', $user->id)->get()->pluck('routine_id')->toArray())->get();
         $plan_entrainement = PlanEntrainement::where('user_id', $user->id)->get();
 
         return view('plan-entrainement.index', [
             'user' => $user,
             'mes_routines' => $mes_routines,
+            'routines_saved' => $routines_saved,
             'plan_entrainement' => $plan_entrainement
         ]);
     }

@@ -10,6 +10,7 @@ use App\Models\Seance;
 use App\Models\Serie;
 use App\Models\ComparatifVolume;
 use App\Models\PlanEntrainement;
+use App\Models\RoutineSaved;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -24,10 +25,12 @@ class SeanceController extends Controller
     {
         $user = Auth::user();
         $mes_routines = Routine::where('user_id', $user->id)->get();
+        $routines_saved = Routine::whereIn('id', RoutineSaved::where('user_id', $user->id)->get()->pluck('routine_id')->toArray())->get();
         $routine_du_jour = PlanEntrainement::where('user_id', $user->id)->where('jour_id', Carbon::now()->dayOfWeekIso)->first()->routine_id ?? 0;
 
         return view('seance.index', [
             'mes_routines' => $mes_routines,
+            'routines_saved' => $routines_saved,
             'routine_du_jour' => $routine_du_jour
         ]);
     }

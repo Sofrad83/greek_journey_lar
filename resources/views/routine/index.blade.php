@@ -11,22 +11,23 @@ ROUTINES
 <hr>
 @if ($mes_routines->count())
     @foreach ($mes_routines as $routine)
-        @include('routine.partials.routine-card', ['routine' => $routine])
+        @include('routine.partials.routine-card', ['routine' => $routine, 'mine' => true])
         <br>
     @endforeach
 @else
-    Il n'y a aucune routine enregistré. Créez-en
+    Aucune routine personnelle trouvées.
+    <br>
 @endif
 <br>
 <h5 class="text-center">Routines de mes amis</h5>
 <hr>
 @if ($routines_amis->count())
     @foreach ($routines_amis as $routine)
-        @include('routine.partials.routine-card', ['routine' => $routine])
+        @include('routine.partials.routine-card', ['routine' => $routine, 'mine' => false])
         <br>
     @endforeach
 @else
-    Aucune routine d'ami
+    Aucune routine d'ami trouvées.
 @endif
 <div class="fab-container fab-bas">
     <div class="fab fab-icon-holder fab-add" style="background-color: goldenrod;">
@@ -50,6 +51,7 @@ ROUTINES
     var urlDeleteRoutine = "{{route('routine.delete')}}"
     var urlGetRoutine = "{{route('routine.get')}}"
     var urlGetFormRoutine = "{{route('routine.get-form')}}"
+    var urlSaveRoutine = "{{route('routine.save-routine')}}"
 </script>
 <script src="{{URL::asset('js/routine/script.js')}}?{{time()}}"></script>
 @endsection

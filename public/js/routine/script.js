@@ -115,6 +115,35 @@ $(document).ready(function() {
         $(this).parent().parent().remove()
     })
 
+    $(document).on('click', '.save-routine', function(e){
+        e.preventDefault()
+
+        let btn = $(this).find('i')
+
+        let id = $(this).data('id')
+        $.ajax({
+            type: "POST",
+            url: urlSaveRoutine,
+            data: {
+                id
+            },
+            success: function (data) {
+                if(btn.hasClass('far')){
+                    btn.removeClass('far')
+                    btn.addClass('fas')
+                }else{
+                    btn.removeClass('fas')
+                    btn.addClass('far')
+                }
+                toastr.success(data.message)
+            },
+            error: function(data){
+                toastr.error("Une erreur est survenue :(")
+                console.log(data);
+            }
+        });
+    })
+
 })
 
 function getExercices(tableElement) {

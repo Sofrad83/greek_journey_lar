@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Routine;
 use Illuminate\Support\Facades\DB;
 use App\Models\Exercice;
+use App\Models\RoutineSaved;
+use App\Models\PlanEntrainement;
 use Illuminate\Support\Facades\Auth;
 
 class RoutineController extends Controller
@@ -21,12 +23,14 @@ class RoutineController extends Controller
         $user = Auth::user();
         $mes_routines = Routine::where('user_id', $user->id)->get();
 
-        $routines_amis = Routine::where('user_id', '!=', $user->id)->get();
+        $routines_amis = Routine::with('user')->where('user_id', '!=', $user->id)->get();
+        $routine_saved = RoutineSaved::where('user_id', $user->id)->get()->pluck('routine_id')->toArray();
 
         return view('routine.index', [
             'mes_routines' => $mes_routines,
             'routines_amis' => $routines_amis,
-            'user' => $user
+            'user' => $user,
+            'routine_saved' => $routine_saved
         ]);
     }
 
@@ -83,5 +87,29 @@ class RoutineController extends Controller
         return [
             'view' => $view
         ];
+    }
+
+    public function saveRoutine(Request $request)
+    {
+        $id = $request->get('id');
+        $user = Auth::user();
+
+        $saved = RoutineSaved::where('routine_id', $id)->where('user_id', $user->id)->first();
+        if($saved){
+            PlanEntrainement::where('routine_id', $id)->where('user_id', $user->id)->delete();
+            $saved->delete();
+            return [
+                'message' => "La routine n'est plus enregistrée. Vous ne pouvez plus l'utiliser dans vos séances et elle a été retiré du plan d'entrainement."
+            ];
+        }else{
+            RoutineSaved::create([
+                'routine_id' => $id,
+                'user_id' => $user->id
+            ]);
+
+            return [
+                'message' => "Routine enregistrée. Vous pouvez désormais l'utiliser dans vos séances ou dans le plan d'entrainement."
+            ];
+        }
     }
 }

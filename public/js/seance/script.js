@@ -103,7 +103,6 @@ let startBtn = $('#btnPlayChrono');
 let heures = 0;
 let minutes = 0;
 let secondes = 0;
-let milli = 0;
 
 let timeout;
 
@@ -126,17 +125,11 @@ const arreter = () => {
 const defilerTemps = () => {
   if (estArrete) return;
 
-  milli = parseInt(milli);
   secondes = parseInt(secondes);
   minutes = parseInt(minutes);
   heures = parseInt(heures);
 
-  milli++;
-
-  if (milli == 60) {
-    secondes++;
-    milli = 0;
-  }
+  secondes++;
 
   if (secondes == 60) {
     minutes++;
@@ -149,10 +142,6 @@ const defilerTemps = () => {
   }
 
   //   affichage
-  if (milli < 10) {
-    milli = "0" + milli;
-  }
-
   if (secondes < 10) {
     secondes = "0" + secondes;
   }
@@ -165,18 +154,17 @@ const defilerTemps = () => {
     heures = "0" + heures;
   }
 
-  chrono.html(`${heures}:${minutes}:${secondes}:<span class='milli-chrono'>${milli}</span>`);
+  chrono.text(`${heures}:${minutes}:${secondes}`);
 
-  timeout = setTimeout(defilerTemps, 1);
+  timeout = setTimeout(defilerTemps, 1000);
 };
 
 const reset = () => {
-  chrono.html("00:00:00:<span class='milli-chrono'>00</span>");
+  chrono.text("00:00:00");
   estArrete = true;
   heures = 0;
   minutes = 0;
   secondes = 0;
-  milli = 0;
   clearTimeout(timeout);
 };
 

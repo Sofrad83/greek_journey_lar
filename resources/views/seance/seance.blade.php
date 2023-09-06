@@ -12,7 +12,7 @@ S'EXERCER
         <div class="container-fluid h-100 p-0 m-0">
             <div class="row p-0 m-0">
                 <div class="col p-0 text-center">
-                    <p class="text-chrono pl-2">00:00:00:<span class="milli-chrono">00</span></p>
+                    <p class="text-chrono pl-2">00:00:00</p>
                 </div>
                 <div class="col p-0 mt-4 text-center">
                     <a href="javascript:void(0)" id="btnPlayChrono" class="pl-3"><i class="fas fa-play fa-2x text-gold"></i></a>

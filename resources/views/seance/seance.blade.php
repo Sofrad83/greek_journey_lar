@@ -11,13 +11,13 @@ S'EXERCER
     <div class="card-body h-100 p-0 text-center">
         <div class="container-fluid h-100 p-0 m-0">
             <div class="row p-0 m-0">
-                <div class="col-7 p-0 m-0 d-flex align-items-center justify-content-end">
-                    <p class="text-chrono">00:00:00</p>
+                <div class="col p-0 text-center">
+                    <p class="text-chrono pl-2">00:00:00:<span class="milli-chrono">00</span></p>
                 </div>
-                <div class="col p-0 px-3 m-0 d-flex align-items-center">
-                    <a href="javascript:void(0)" id="btnPlayChrono" class="p-2"><i class="fas fa-play fa-2x text-gold"></i></a>
+                <div class="col p-0 mt-4 text-center">
+                    <a href="javascript:void(0)" id="btnPlayChrono" class="pl-3"><i class="fas fa-play fa-2x text-gold"></i></a>
                     <a href="javascript:void(0)" id="btnPauseChrono" class="p-2"><i class="fas fa-pause fa-2x text-gold"></i></a>
-                    <a href="javascript:void(0)" id="btnStopChrono" class="p-2"><i class="fas fa-stop fa-2x text-gold"></i></a>
+                    <a href="javascript:void(0)" id="btnStopChrono" class=""><i class="fas fa-stop fa-2x text-gold"></i></a>
                 </div>
             </div>
         </div>

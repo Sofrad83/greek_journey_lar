@@ -39,6 +39,14 @@ GREEK JOURNEY
                             </div>
                             <!--card-->
                             <!--card-->
+                            <div class="card carousel-cell w-100 p-0 mx-3 text-center" data-href="{{route('tableau-score.index')}}">
+                                <div class="card-body p-0" style="background: #0f0f0b">
+                                    <img src="{{URL::asset('img/greek/carousel-tableau-score.png')}}" class="img-fluid" alt="">
+                                    <h5>Tableau des scores</h5>
+                                </div>
+                            </div>
+                            <!--card-->
+                            <!--card-->
                             <div class="card carousel-cell w-100 p-0 mx-3 text-center" data-href="{{route('plan-entrainement.index')}}">
                                 <div class="card-body p-0" style="background: #0f0f0b">
                                     <img src="{{URL::asset('img/greek/carousel-plan-entrainement.png')}}" class="img-fluid" alt="">

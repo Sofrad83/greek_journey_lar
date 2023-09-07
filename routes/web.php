@@ -67,6 +67,11 @@ Route::group(['prefix' => 'mes-amis'], function(){
     Route::post('/retirer-ami', 'App\Http\Controllers\MesAmisController@retirerAmi')->name('mes-amis.retirer-ami');
 });
 
+//Tableau Scores
+Route::group(['prefix' => 'tableau-score'], function(){
+    Route::get('/', 'App\Http\Controllers\TableauScoreController@index')->name('tableau-score.index');
+});
+
 //Auth
 Route::get('/dashboard', function () {
     return view('dashboard');

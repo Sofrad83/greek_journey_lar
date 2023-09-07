@@ -1,7 +1,7 @@
 @extends('default')
 
 @section('page-title')
-PLAN D'ENTRAINEMENT
+PLAN
 @endsection
 
 @section('background-img'){{URL::asset('img/greek/carousel-plan-entrainement.png')}}@endsection

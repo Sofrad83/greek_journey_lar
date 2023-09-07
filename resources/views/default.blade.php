@@ -62,67 +62,95 @@
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col">
-                    <a href="{{route('home')}}" class="text-gold"><strong>Accueil</strong></a>
+            <a href="{{route('home')}}" class="text-gold">
+                <div class="row">
+                    <div class="col">
+                        <strong>Accueil</strong>
+                    </div>
                 </div>
-            </div>
+            </a>
             @if (Illuminate\Support\Facades\Auth::user())
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('seance.index')}}" class="text-gold"><strong>S'exercer</strong></a>
+                <a href="{{route('seance.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>S'exercer</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('plan-entrainement.index')}}" class="text-gold"><strong>Plan d'entrainement</strong></a>
+                <a href="{{route('tableau-score.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Tableau des scores</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('exercice.index')}}" class="text-gold"><strong>Exercices</strong></a>
+                <a href="{{route('plan-entrainement.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Plan d'entrainement</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('routine.index')}}" class="text-gold"><strong>Routines</strong></a>
+                <a href="{{route('exercice.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Exercices</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('mes-amis.index')}}" class="text-gold"><strong>Mes amis</strong> {!!Illuminate\Support\Facades\Auth::user()->getDemandeEnAttente() ? "<span class='badge badge-pills badge-warning'>".Illuminate\Support\Facades\Auth::user()->getDemandeEnAttente()."</span>" : ""!!}</a>
+                <a href="{{route('routine.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Routines</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('mon-compte.index')}}" class="text-gold"><strong>Mon Compte</strong></a>
+                <a href="{{route('mes-amis.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Mes amis</strong> {!!Illuminate\Support\Facades\Auth::user()->getDemandeEnAttente() ? "<span class='badge badge-pills badge-warning'>".Illuminate\Support\Facades\Auth::user()->getDemandeEnAttente()."</span>" : ""!!}
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('logout')}}" class="text-gold"><strong>Se déconnecter</strong></a>
+                <a href="{{route('mon-compte.index')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Mon Compte</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <br>
+                <a href="{{route('logout')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Se déconnecter</strong>
+                        </div>
+                    </div>
+                </a>
             @else
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('login')}}" class="text-gold"><strong>Se connecter</strong></a>
+                <a href="{{route('login')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Se connecter</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <a href="{{route('register')}}" class="text-gold"><strong>Créer mon compte</strong></a>
+                <a href="{{route('register')}}" class="text-gold">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Créer mon compte</strong>
+                        </div>
                     </div>
-                </div>
+                </a>
             @endif
             
         </div>

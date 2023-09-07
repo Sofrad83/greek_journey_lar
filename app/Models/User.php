@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Amis;
+use App\Models\Seance;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -56,5 +58,17 @@ class User extends Authenticatable
     public function getDemandeEnAttente()
     {
         return Amis::where('user_2', $this->id)->where('is_pending', 1)->count();
+    }
+
+    public function getVolumeSemaine()
+    {
+        //On commence par récup toutes les séances de la semaines
+        $seances = Seance::whereBetween('date', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->where('user_id', $this->id)->get();
+        $volume_semaine = Serie::selectRaw('sum((nb_rep * poids)) as volume')->whereIn('seance_id', $seances->pluck('id')->toArray())->first()->volume;
+
+        return [
+            'volume_semaine' => $volume_semaine,
+            'nb_seance' => $seances->count()
+        ];
     }
 }

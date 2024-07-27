@@ -34,6 +34,10 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         return Redirect::route('home');
+        // return response()->json([
+        //     "logged" => true,
+        //     "redirect" => route("home")
+        // ]);
     }
 
     /**
@@ -50,6 +54,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return response()->json([
+            "logged" => false,
+            "redirect" => route("home")
+        ])
     }
 }
